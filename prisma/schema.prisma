@@ -49,3 +49,7 @@ model Attachment {
 
   @@index([courseId])
 }
+
+// npx prisma generate | Despues de cambiar el schema
+// npx prisma db push
+// npx prisma studio | localhost:5555
