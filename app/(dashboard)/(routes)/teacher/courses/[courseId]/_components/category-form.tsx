@@ -18,7 +18,6 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Textarea } from "@/components/ui/textarea";
 import { Course } from "@prisma/client";
 import { Combobox } from "@/components/ui/combobox";
 
@@ -42,7 +41,7 @@ export const CategoryForm = ({initialData, courseId, options}: CategoryFormProps
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            categoryId: initialData.categoryId || ""
+            categoryId: initialData?.categoryId || ""
         }
     })
 
@@ -58,7 +57,7 @@ export const CategoryForm = ({initialData, courseId, options}: CategoryFormProps
         }
     }
 
-    const selectedOption  = options.find((option) => option.value === initialData.categoryId)
+    const selectedOption  = options.find((option) => option.value === initialData?.categoryId)
 
     return (
         <div className="mt-6 border bg-slate-100 rounded-md p-4">
@@ -80,7 +79,7 @@ export const CategoryForm = ({initialData, courseId, options}: CategoryFormProps
                 !isEditing ? (
                     <p className={cn(
                         "text-sm mt-2",
-                        !initialData.categoryId && "text-slate-500 italic"
+                        !initialData?.categoryId && "text-slate-500 italic"
                     )}>
                         {selectedOption?.label || "No category"}
                     </p>

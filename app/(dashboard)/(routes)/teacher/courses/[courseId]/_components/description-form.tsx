@@ -40,7 +40,7 @@ export const DescriptionForm = ({initialData, courseId}: DescriptionFormProps) =
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            description: initialData.description || ""
+            description: initialData?.description || ""
         }
     })
 
@@ -76,9 +76,9 @@ export const DescriptionForm = ({initialData, courseId}: DescriptionFormProps) =
                 !isEditing ? (
                     <p className={cn(
                         "text-sm mt-2",
-                        !initialData.description && "text-slate-500 italic"
+                        !initialData?.description && "text-slate-500 italic"
                     )}>
-                        {initialData.description || "No description"}
+                        {initialData?.description || "No description"}
                     </p>
                 ) : (
                     <Form {...form}>
