@@ -134,7 +134,7 @@ export async function PATCH(req: Request, { params }: { params: { courseId: stri
                 data: {
                     chapterId: params.chapterId,
                     assetId: asset.id,
-                    playback: asset.playback_ids?.[0]?.id
+                    playbackId: asset.playback_ids?.[0]?.id
                 }
             })
 
