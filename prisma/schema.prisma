@@ -115,7 +115,7 @@ model Purchase {
   @@unique([userId, courseId])
 }
 
-model StripeCustumer {
+model StripeCustomer {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   userId String @unique
   stripeCustomerId String @unique
