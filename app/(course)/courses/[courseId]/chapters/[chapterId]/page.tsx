@@ -84,6 +84,12 @@ const ChapterIdPage = async ({
             )}
           </div>
 
+          {!purchase && (
+            <div className="p-4">
+              <Banner label='Mock data for Stripe: 4242 4242 4242 4242 | 05/55 | 555 | name. This way you can "buy" the course.' />
+            </div>
+          )}
+
           <Separator />
 
           <div>

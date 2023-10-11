@@ -12,8 +12,6 @@ import MuxPlayer from '@mux/mux-player-react'
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
 
-
-
 interface ChapterVideoFormProps {
   initialData: Chapter & { muxData?: MuxData | null }
   courseId: string;
